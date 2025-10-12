@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+  /* PRIMARY */
+  --color-gold-500: hsl(31, 77%, 52%);
+  --color-cyan-800: hsl(184, 100%, 22%);
+  --color-green-950: hsl(179, 100%, 13%);
+
+  /* NATURAL */
+  /* paragraph */
+  --color-transparent-white: hsla(0, 0%, 100%, 0.75);
+  /* background, heading, button */
+  --color-gray-100: hsl(0, 0%, 95%);
+
+  /* TYPOGRAPHY */
+  --fs-default: 15px;
+  --fontf-lexenddeca: "Lexend Deca", sans-serif;
+  --fontf-bigshoulders: "Big Shoulders", sans-serif; 
+  --fw-lexenddeca:400
+  --fw-bigshoulders:700
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-gray-100);
+  font-size: var(--fs-default);
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  font-family:var(--fontf-lexenddeca);
+  font-weight: var(--fw-lexenddeca);
+}
+
+main{
+    display: grid;
+    grid-template-rows:repeat(3, 1fr);
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.card{
+    height: 400px;
+    width: 265px;
+    padding: 24px;
+    color: var(--color-transparent-white);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 36px;
+    box-shadow: 0px 0px 10px 1px black;
+}
+
+.card h1 {
+    color: var(--color-gray-100);
+    text-transform: uppercase;
+    font-family: var(--fontf-bigshoulders);
+    font-weight: var(--fw-bigshoulders);
+}
+
+.card p{
+    letter-spacing: 110%;
+    margin-bottom: 24px;
+}
+
+.sedans{
+    background-color: var(--color-gold-500);
+    --card-color :var(--color-gold-500)
+}
+
+.suvs{
+    background-color: var(--color-cyan-800);
+    --card-color :var(--color-cyan-800)
+}
+
+.luxury {
+    background-color: var(--color-green-950);
+    --card-color :var(--color-green-950)
+}
+
+.btn {
+    width: 115px;
+    height: 35px;
+    border-radius: 2em;
+    border-color: transparent;
+    color: var(--card-color);
+    background-color: var(--color-gray-100);
+    font-family: var(--fontf-bi);
+}
+
+
+.btn:hover {
+    color:var(--color-gray-100);
+    border: 1px solid var(--color-gray-100);
+    background-color: transparent;
+}
+
+@media (min-width: 375px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    box-shadow: 0px 0px 15px 4px black;
+  }
+}
